@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mess Menu Mapper | RevokX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tools.css">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<header class="site-header scrolled" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html#home" class="logo">Revok<span>X</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#ebooks" class="nav-link">Ebooks</a>
+      <a href="index.html#coaching" class="nav-link">Coaching</a>
+      <a href="tools.html" class="nav-link active">Tools</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <button class="btn btn-outline header-cta" onclick="location.href='index.html#coaching'">Start Now</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="tool-hero">
+    <p class="eyebrow">Tool 1 of 4</p>
+    <h1>MESS MENU <span class="accent">MAPPER</span></h1>
+    <p>Tick everything that's on your plate today. We'll break it down and score it — then tell you exactly what to add.</p>
+  </div>
+
+  <div class="tool-wrap" style="max-width:900px;">
+    <a href="tools.html" class="back-link">← All Tools</a>
+
+    <div class="panel">
+      <h2>Your Goal</h2>
+      <p class="hint">This changes what "good" means for your plate score.</p>
+      <div class="tab-row" id="goalTabs">
+        <button class="tab-btn active" data-goal="fatloss">🔥 Fat Loss</button>
+        <button class="tab-btn" data-goal="musclegain">💪 Muscle Gain</button>
+        <button class="tab-btn" data-goal="recomp">⚖️ Recomposition</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>What's on your plate today?</h2>
+      <p class="hint">Tap everything that applies. Values are per standard hostel serving.</p>
+      <div class="chip-grid" id="foodGrid"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Your Plate Breakdown</h2>
+      <div class="stat-row">
+        <div class="stat-box"><div class="num" id="statCal">0</div><div class="lab">Calories</div></div>
+        <div class="stat-box"><div class="num" id="statProtein">0g</div><div class="lab">Protein</div></div>
+        <div class="stat-box"><div class="num" id="statCarbs">0g</div><div class="lab">Carbs</div></div>
+        <div class="stat-box"><div class="num" id="statFat">0g</div><div class="lab">Fat</div></div>
+      </div>
+
+      <div class="score-meter">
+        <div class="score-bar-track"><div class="score-bar-fill" id="scoreFill"></div></div>
+        <div class="score-label"><span>Plate Score</span><span class="score-num" id="scoreNum">0 / 10</span></div>
+      </div>
+
+      <div class="feedback-list" id="feedbackList"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="index.html#home" class="logo">Revok<span>X</span></a>
+    <nav class="footer-nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#ebooks">Ebooks</a>
+      <a href="index.html#coaching">Coaching</a>
+      <a href="tools.html">Tools</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="footer-socials">
+      <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+      <a href="#" aria-label="Youtube"><i class="icon-youtube"></i></a>
+      <a href="#" aria-label="Email"><i class="icon-mail"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 RevokX. All Rights Reserved.</div>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  /* ---------- shared chrome ---------- */
+  const glow = document.getElementById('cursorGlow');
+  let mouseX=0, mouseY=0, glowX=0, glowY=0;
+  window.addEventListener('mousemove', e=>{ mouseX=e.clientX; mouseY=e.clientY; });
+  (function animateGlow(){ glowX+=(mouseX-glowX)*0.12; glowY+=(mouseY-glowY)*0.12; if(glow){glow.style.left=glowX+'px'; glow.style.top=glowY+'px';} requestAnimationFrame(animateGlow); })();
+  const header = document.getElementById('siteHeader');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', ()=>{ if(window.scrollY>60){scrollTopBtn.classList.add('show');} else {scrollTopBtn.classList.remove('show');} });
+  scrollTopBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.getElementById('mainNav');
+  hamburger.addEventListener('click', ()=>{ hamburger.classList.toggle('open'); mainNav.classList.toggle('open'); });
+
+  /* ---------- MESS MAPPER LOGIC (pure rules, zero cost) ---------- */
+  const foodGrid = document.getElementById('foodGrid');
+  const selected = new Set();
+
+  FOOD_DB.forEach(item => {
+    const chip = document.createElement('label');
+    chip.className = 'chip';
+    chip.innerHTML = `
+      <input type="checkbox" value="${item.id}">
+      <span class="chip-icon">${item.icon}</span>
+      <span class="chip-label">${item.label}</span>
+    `;
+    chip.querySelector('input').addEventListener('change', (e) => {
+      if(e.target.checked){ selected.add(item.id); chip.classList.add('checked'); }
+      else { selected.delete(item.id); chip.classList.remove('checked'); }
+      recalc();
+    });
+    foodGrid.appendChild(chip);
+  });
+
+  let currentGoal = 'fatloss';
+  document.querySelectorAll('#goalTabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#goalTabs .tab-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      currentGoal = btn.dataset.goal;
+      recalc();
+    });
+  });
+
+  // Goal-based thresholds — pure static rule table, no AI
+  const THRESHOLDS = {
+    fatloss:    { minProtein: 40, maxCal: 700, minVeg: 1, maxCarbItems: 2 },
+    musclegain: { minProtein: 50, maxCal: 1100, minVeg: 1, maxCarbItems: 4 },
+    recomp:     { minProtein: 45, maxCal: 850, minVeg: 1, maxCarbItems: 3 },
+  };
+
+  function recalc(){
+    let cal=0, protein=0, carbs=0, fat=0, vegCount=0, carbItems=0;
+    selected.forEach(id => {
+      const f = FOOD_DB.find(x => x.id === id);
+      if(!f) return;
+      cal += f.cal; protein += f.protein; carbs += f.carbs; fat += f.fat;
+      if(f.tag === 'veg') vegCount++;
+      if(f.tag === 'carb') carbItems++;
+    });
+
+    document.getElementById('statCal').textContent = cal;
+    document.getElementById('statProtein').textContent = protein + 'g';
+    document.getElementById('statCarbs').textContent = carbs + 'g';
+    document.getElementById('statFat').textContent = fat + 'g';
+
+    const t = THRESHOLDS[currentGoal];
+    let score = 0;
+    const feedback = [];
+
+    // Rule-based scoring — simple conditionals, no computation beyond arithmetic
+    if(protein >= t.minProtein){ score += 4; feedback.push({good:true, text:`Protein target hit (${protein}g ≥ ${t.minProtein}g). Good work.`}); }
+    else { const gap = t.minProtein - protein; feedback.push({good:false, text:`Add ~${gap}g more protein — try an extra egg, curd or dal serving.`}); }
+
+    if(vegCount >= t.minVeg){ score += 2; feedback.push({good:true, text:'You have at least one veg/salad item on the plate.'}); }
+    else { feedback.push({good:false, text:'No vegetables selected — add salad or sabzi for fibre and micronutrients.'}); }
+
+    if(cal > 0 && cal <= t.maxCal){ score += 2; feedback.push({good:true, text:`Calories look reasonable for your goal (${cal} kcal).`}); }
+    else if(cal > t.maxCal){ feedback.push({good:false, text:`This plate is a bit high in calories for ${currentGoal === 'fatloss' ? 'fat loss' : 'this goal'} — consider one less carb-heavy item.`}); }
+
+    if(carbItems > 0 && carbItems <= t.maxCarbItems){ score += 2; feedback.push({good:true, text:'Carb portion looks appropriate.'}); }
+    else if(carbItems > t.maxCarbItems){ feedback.push({good:false, text:'Too many carb-heavy items at once — rice + roti + pulao together adds up fast.'}); }
+
+    if(selected.size === 0){ feedback.length = 0; feedback.push({good:false, text:'Select what\'s on your plate above to get your score.'}); }
+
+    document.getElementById('scoreFill').style.width = (score*10) + '%';
+    document.getElementById('scoreNum').textContent = score + ' / 10';
+
+    const list = document.getElementById('feedbackList');
+    list.innerHTML = '';
+    feedback.forEach(f => {
+      const div = document.createElement('div');
+      div.className = 'feedback-item' + (f.good ? ' good' : '');
+      div.innerHTML = `<span class="fi-dot">${f.good ? '✅' : '⚠️'}</span><span>${f.text}</span>`;
+      list.appendChild(div);
+    });
+  }
+
+  recalc();
+</script>
+</body>
+</html>

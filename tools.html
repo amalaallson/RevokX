@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tools | RevokX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tools.css">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header scrolled" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html#home" class="logo">Revok<span>X</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#ebooks" class="nav-link">Ebooks</a>
+      <a href="index.html#coaching" class="nav-link">Coaching</a>
+      <a href="tools.html" class="nav-link active">Tools</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <button class="btn btn-outline header-cta" onclick="location.href='index.html#coaching'">Start Now</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="tool-hero">
+    <p class="eyebrow">100% Free · No Signup · Works Offline</p>
+    <h1>HOSTEL FITNESS <span class="accent">TOOLKIT</span></h1>
+    <p>Practical calculators built for hostel life — no app download, no subscription. Everything runs right in your browser and remembers your data on this device.</p>
+  </div>
+
+  <div class="tool-wrap">
+    <div class="tool-grid">
+
+      <a href="mess-mapper.html" class="tool-card">
+        <div class="tool-icon">🍽️</div>
+        <h3>Mess Menu Mapper</h3>
+        <p>Tick what's on today's hostel plate and instantly see your protein, carbs, fat and a Plate Score with fixes.</p>
+        <span class="tool-cta">Check my plate →</span>
+      </a>
+
+      <a href="budget-calculator.html" class="tool-card">
+        <div class="tool-icon">💰</div>
+        <h3>Budget Add-On Calculator</h3>
+        <p>Enter what you can spend and get the highest-protein-per-rupee foods you can actually afford in a hostel.</p>
+        <span class="tool-cta">Find my add-ons →</span>
+      </a>
+
+      <a href="plan-switcher.html" class="tool-card">
+        <div class="tool-icon">🎯</div>
+        <h3>Goal-Based Plan Switcher</h3>
+        <p>Pick Fat Loss, Muscle Gain or Recomposition and get a plan built around the same food your mess already serves.</p>
+        <span class="tool-cta">Get my plan →</span>
+      </a>
+
+      <a href="progress-tracker.html" class="tool-card">
+        <div class="tool-icon">📈</div>
+        <h3>Progress Tracker</h3>
+        <p>Log weight and measurements, see your trend line, and build a daily logging streak — stored locally, private to you.</p>
+        <span class="tool-cta">Track my progress →</span>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="index.html#home" class="logo">Revok<span>X</span></a>
+    <nav class="footer-nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#ebooks">Ebooks</a>
+      <a href="index.html#coaching">Coaching</a>
+      <a href="tools.html">Tools</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="footer-socials">
+      <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+      <a href="#" aria-label="Youtube"><i class="icon-youtube"></i></a>
+      <a href="#" aria-label="Email"><i class="icon-mail"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 RevokX. All Rights Reserved.</div>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+</footer>
+
+<script>
+  // Minimal shared chrome behavior (cursor glow, header scroll, mobile nav, scroll-top)
+  const glow = document.getElementById('cursorGlow');
+  let mouseX=0, mouseY=0, glowX=0, glowY=0;
+  window.addEventListener('mousemove', e=>{ mouseX=e.clientX; mouseY=e.clientY; });
+  function animateGlow(){
+    glowX += (mouseX-glowX)*0.12; glowY += (mouseY-glowY)*0.12;
+    if(glow){ glow.style.left=glowX+'px'; glow.style.top=glowY+'px'; }
+    requestAnimationFrame(animateGlow);
+  }
+  animateGlow();
+
+  const header = document.getElementById('siteHeader');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY>60){ header.classList.add('scrolled'); scrollTopBtn.classList.add('show'); }
+    else { scrollTopBtn.classList.remove('show'); }
+  });
+  scrollTopBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.getElementById('mainNav');
+  hamburger.addEventListener('click', ()=>{
+    hamburger.classList.toggle('open');
+    mainNav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+CONTACT FORM SETUP INSTRUCTIONS
+================================
+
+Your contact form has been successfully integrated with Brevo API!
+Your API key is now stored securely and won't be committed to GitHub.
+
+IMPORTANT: Update your email address
+------------------------------------
+
+1. Open: config.js
+2. Find this line:
+   RECIPIENT_EMAIL: 'your-email@example.com',
+
+3. Replace it with YOUR ACTUAL EMAIL ADDRESS:
+   RECIPIENT_EMAIL: 'youremail@gmail.com',
+
+4. Optionally update the recipient name:
+   RECIPIENT_NAME: 'RevokX' (or your preferred name)
+
+5. Save the file
+
+SECURITY SETUP ✓
+-----------------
+✓ .gitignore created - protects your API key
+✓ config.js added to .gitignore (won't be pushed to GitHub)
+✓ config.example.js created (safe template for GitHub)
+✓ API key moved from script.js to config.js
+
+FILES EXPLAINED
+---------------
+- config.js → Contains your REAL API key (NOT committed to git)
+- config.example.js → Template without real credentials (committed to git)
+- .gitignore → Tells git to ignore config.js
+
+HOW IT WORKS
+------------
+- When someone fills out the contact form on your website
+- The form sends an email using your Brevo API key
+- The email is sent TO your email address
+- The email will include:
+  * Sender's name
+  * Sender's email (so you can reply)
+  * Subject line
+  * Full message content
+- You can reply directly to the sender's email
+
+FEATURES INCLUDED
+-----------------
+✓ Full form validation (checks all fields and email format)
+✓ Loading state while sending
+✓ Success/error messages
+✓ Professional HTML email template
+✓ Reply-to feature (you can reply directly to the sender)
+✓ Mobile responsive design
+✓ Smooth animations
+
+TESTING
+-------
+After updating your email address:
+1. Open index.html in your browser
+2. Scroll to the Contact section
+3. Fill out the form with test data
+4. Click "Send Message"
+5. Check your email inbox for the message
+
+SECURITY NOTE
+-------------
+Your Brevo API key is embedded in the JavaScript file. This is fine for
+contact forms, but keep in mind that anyone can view it in the browser's
+developer tools. Brevo has rate limits and security features to prevent
+abuse. For production sites, consider using a backend server to handle
+API calls more securely.
+
+If you need help, reach out!

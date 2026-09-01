@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevokX | Build Your Best Self</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= PRELOADER ================= -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo">Revok<span>X</span></div>
+    <div class="preloader-bar">
+      <div class="preloader-fill"></div>
+    </div>
+  </div>
+
+  <!-- ================= CURSOR GLOW ================= -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#home" class="logo">Revok<span>X</span></a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#ebooks" class="nav-link">Ebooks</a>
+        <a href="#coaching" class="nav-link">Coaching</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="btn btn-outline header-cta">Start Now</button>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">REVOKX</div>
+    <div class="hero-sidebar">
+      <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+      <a href="#" aria-label="Youtube"><i class="icon-youtube"></i></a>
+      <a href="#" aria-label="Email"><i class="icon-mail"></i></a>
+      <span class="sidebar-line"></span>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-content" data-reveal>
+        <p class="eyebrow">Discipline. Focus. Strength.</p>
+        <h1 class="hero-title">
+          <span class="line">BUILD YOUR</span>
+          <span class="line accent">BEST <span class="white">SELF.</span></span>
+        </h1>
+        <p class="hero-desc">Science backed training. Real results.<br>Transform your body. Transform your life.</p>
+
+        <div class="hero-btns">
+          <a href="#ebooks" class="btn btn-solid">Explore Ebooks <span class="arrow">→</span></a>
+          <button class="btn btn-ghost" id="watchVideoBtn"><span class="play-ico">▶</span> Watch Video</button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <h3 class="counter" data-count="4">0</h3><span class="stat-plus">+</span>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <h3 class="counter" data-count="3">0</h3><span class="stat-plus">+</span>
+            <p>Clients Transformed</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <h3 class="counter" data-count="100">0</h3><span class="stat-plus">%</span>
+            <p>Dedication</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media" data-reveal>
+        <div class="hero-glow"></div>
+        <img src="images/hero.png" alt="RevokX Fitness Coach" class="hero-img">
+      </div>
+    </div>
+
+    <!-- Feature strip -->
+    <div class="feature-strip" data-reveal>
+      <div class="feature-item">
+        <div class="feature-icon"><svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" />
+          </svg></div>
+        <div>
+          <h4>Result Driven</h4>
+          <p>Proven strategies that deliver real, visible results.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg viewBox="0 0 24 24">
+            <path d="M4 5c3-1.5 6-1.5 8 0v14c-2-1.5-5-1.5-8 0V5Z" />
+            <path d="M20 5c-3-1.5-6-1.5-8 0v14c2-1.5 5-1.5 8 0V5Z" />
+          </svg></div>
+        <div>
+          <h4>Science Backed</h4>
+          <p>Everything is based on science, not myths.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg viewBox="0 0 24 24">
+            <rect x="3" y="10.5" width="3" height="3" rx="0.6" />
+            <rect x="18" y="10.5" width="3" height="3" rx="0.6" />
+            <line x1="6" y1="12" x2="18" y2="12" />
+            <rect x="7.5" y="8.5" width="2.2" height="7" rx="0.6" />
+            <rect x="14.3" y="8.5" width="2.2" height="7" rx="0.6" />
+          </svg></div>
+        <div>
+          <h4>Sustainable</h4>
+          <p>Build habits that last a lifetime.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg viewBox="0 0 24 24">
+            <path d="M12 3 4 6v5c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3Z" />
+          </svg></div>
+        <div>
+          <h4>Mental Toughness</h4>
+          <p>Stronger mind. Stronger you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-content" data-reveal>
+        <p class="eyebrow">About Me</p>
+        <h2 class="section-title">I DON'T JUST TRAIN.<br><span class="accent">I TRANSFORM.</span></h2>
+        <p class="about-text">I'm RevokX, a fitness coach with 4+ years of training experience helping people break
+          limits and become the strongest version of themselves.</p>
+        <p class="about-text">My mission is simple – deliver practical, effective and sustainable guidance so you can
+          build the body and life you're proud of.</p>
+        <button class="btn btn-outline">More About Me <span class="arrow">→</span></button>
+      </div>
+
+      <div class="about-media" data-reveal>
+        <div class="about-frame">
+          <img src="images/about.png" alt="RevokX reflecting in the gym">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EBOOKS ================= -->
+  <section class="ebooks" id="ebooks">
+    <div class="pricing-shell" data-reveal>
+      <div aria-hidden="true" class="pricing-glow pricing-glow-top"></div>
+      <div aria-hidden="true" class="pricing-glow pricing-glow-bottom"></div>
+
+      <div class="section-head">
+        <p class="eyebrow center">Ebook Collection</p>
+        <h2 class="section-title center">YOUR FITNESS KNOWLEDGE.<br>ANYTIME, <span class="accent">ANYWHERE.</span></h2>
+      </div>
+
+      <div class="pricing-grid">
+
+        <article class="pricing-card">
+          <div class="ebook-cover ebook-cover-img">
+            <img src="images/fatloss43.png" alt="Fat Loss Blueprint Ebook Cover">
+          </div>
+          <div class="ebook-info">
+            <h3>Fat Loss Blueprint</h3>
+            <p>The complete guide to losing fat, staying lean, and building lasting confidence.</p>
+            <div class="price-row">
+              <span class="price-amount">₹49</span>
+              <span class="price-note">one-time · instant download</span>
+            </div>
+           <a href="https://payhip.com/b/uwFm6"<button class="btn btn-solid">Buy Ebook <span class="arrow">↗</span></button></a>
+          </div>
+        </article>
+
+        <article class="pricing-card featured">
+          <div class="featured-badge">⚡ MOST POPULAR</div>
+          <div class="ebook-cover ebook-cover-img">
+            <img src="images/muscle43.png" alt="Muscle Gain Blueprint Ebook Cover">
+          </div>
+          <div class="ebook-info">
+            <h3>Muscle Gain Blueprint</h3>
+            <p>The complete guide to building muscle naturally — diet, training, recovery, all covered.</p>
+            <div class="price-row">
+              <span class="price-amount">₹49</span>
+              <span class="price-note">one-time · instant download</span>
+            </div>
+            <a href="https://payhip.com/b/Z6s0j"<button class="btn btn-solid">Buy Ebook <span class="arrow">↗</span></button></a>
+          </div>
+        </article>
+
+        <article class="pricing-card">
+          <div class="ebook-cover ebook-cover-img">
+            <img src="images/food43.png" alt="Nutrition Mastery Ebook Cover">
+          </div>
+          <div class="ebook-info">
+            <h3>Nutrition Mastery</h3>
+            <p>The ultimate guide to nutrition, meal planning, and hitting your macros every day.</p>
+            <div class="price-row">
+              <span class="price-amount">₹19</span>
+              <span class="price-note">one-time · instant download</span>
+            </div>
+            <button class="btn btn-solid">Comming soon.<span class="arrow"></span></button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COACHING ================= -->
+  <section class="coaching" id="coaching">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow center">Online Coaching</p>
+      <h2 class="section-title center">PERSONALIZED. EFFECTIVE.<br><span class="accent">TRANSFORMATIVE.</span></h2>
+    </div>
+
+    <div class="plans-grid" data-reveal>
+
+      <div class="plan-card">
+        <div class="plan-icon">🔥</div>
+        <h3>Fat Loss</h3>
+        <ul class="plan-list">
+          <li>Custom Workout Plan</li>
+          <li>Custom Diet Plan</li>
+          <li>Weekly Check-ins</li>
+          <li>24/7 Support</li>
+        </ul>
+        <div class="plan-price"><span class="rupee">₹</span>199 <small>/ month</small></div>
+       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWbwyJ-cd4Pv6Mh5GuCW6JqxZJG6TML4mvx0ZKAZjRTwaoPg/viewform" <button class="btn btn-outline full">Choose Plan <span class="arrow">→</span></button></a>
+      </div>
+
+      <div class="plan-card popular">
+        <span class="popular-badge">Most Popular</span>
+        <div class="plan-icon">💪</div>
+        <h3>Weight Gain</h3>
+        <ul class="plan-list">
+          <li>Custom Workout Plan</li>
+          <li>Custom Diet Plan</li>
+          <li>Weekly Check-ins</li>
+          <li>24/7 Support</li>
+        </ul>
+        <div class="plan-price"><span class="rupee">₹</span>299 <small>/ month</small></div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWbwyJ-cd4Pv6Mh5GuCW6JqxZJG6TML4mvx0ZKAZjRTwaoPg/viewform"<button class="btn btn-solid full">Choose Plan <span class="arrow">→</span></button></a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🏆</div>
+        <h3>Transformation</h3>
+        <ul class="plan-list">
+          <li>Custom Workout Plan</li>
+          <li>Custom Diet Plan</li>
+          <li>Weekly Check-ins</li>
+          <li>24/7 Support</li>
+        </ul>
+        <div class="plan-price"><span class="rupee">₹</span>499 <small>/ month</small></div>
+       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWbwyJ-cd4Pv6Mh5GuCW6JqxZJG6TML4mvx0ZKAZjRTwaoPg/viewform" <button class="btn btn-outline full">Choose Plan <span class="arrow">→</span></button></a>
+      </div>
+
+    </div>
+
+    <div class="coaching-badges" data-reveal>
+      <span>✔ 100% Customized Plans</span>
+      <span>✔ Progress Tracking</span>
+      <span>✔ Expert Guidance</span>
+      <span>✔ Results Oriented</span>
+    </div>
+  </section>
+
+  <!-- ================= FREE TOOLS TEASER ================= -->
+  <section class="ebooks" id="tools-teaser">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow center">Free Toolkit</p>
+      <h2 class="section-title center">HOSTEL TOOLS.<br><span class="accent">ZERO COST.</span></h2>
+      <p
+        style="text-align:center; color:var(--grey); max-width:560px; margin:14px auto 0; font-size:15px; line-height:1.6;">
+        Four practical calculators built for hostel life — no signup, no payment, works right in your browser.
+      </p>
+    </div>
+
+    <div class="ebook-grid" data-reveal>
+      <div class="ebook-card">
+        <div class="ebook-cover cover-fatloss">
+          <span class="cover-eyebrow">Free Tool</span>
+          <span class="cover-title">MESS MENU<br>MAPPER</span>
+          <span class="cover-flame">🍽️</span>
+          <span class="cover-footer">PLATE SCORE</span>
+        </div>
+        <div class="ebook-info">
+          <h3>Mess Menu Mapper</h3>
+          <p>Tick today's plate, get an instant protein/carb/fat breakdown and score</p>
+          <button class="btn btn-solid small" onclick="location.href='mess-mapper.html'">Try It <span
+              class="arrow">↗</span></button>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover cover-musclegain">
+          <span class="cover-eyebrow">Free Tool</span>
+          <span class="cover-title">BUDGET<br>ADD-ON CALC</span>
+          <span class="cover-flame">💰</span>
+          <span class="cover-footer">RUPEE-SMART</span>
+        </div>
+        <div class="ebook-info">
+          <h3>Budget Add-On Calculator</h3>
+          <p>Best protein-per-rupee foods that fit your daily budget</p>
+          <button class="btn btn-solid small" onclick="location.href='budget-calculator.html'">Try It <span
+              class="arrow">↗</span></button>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover cover-nutrition">
+          <span class="cover-eyebrow">Free Tool</span>
+          <span class="cover-title">PLAN<br>SWITCHER</span>
+          <span class="cover-flame">🎯</span>
+          <span class="cover-footer">3 GOALS</span>
+        </div>
+        <div class="ebook-info">
+          <h3>Goal-Based Plan Switcher</h3>
+          <p>Fat loss, muscle gain or recomposition — plan built around mess food</p>
+          <button class="btn btn-solid small" onclick="location.href='plan-switcher.html'">Try It <span
+              class="arrow">↗</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:34px;" data-reveal>
+      <button class="btn btn-outline" onclick="location.href='tools.html'">See All Tools <span
+          class="arrow">→</span></button>
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS (bonus, referenced in nav) ================= -->
+  <section class="reviews" id="reviews">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow center">Reviews</p>
+      <h2 class="section-title center">REAL PEOPLE.<br><span class="accent">REAL RESULTS.</span></h2>
+    </div>
+    <div class="reviews-track-wrap" data-reveal>
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Lost 12kg in 4 months following the Fat Loss Blueprint. The check-ins kept me accountable every single
+            week."</p>
+          <h5>— Arjun M.</h5>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"RevokX doesn't just give you a plan, he actually teaches you why it works. My strength has never been
+            higher."</p>
+          <h5>— Karthik S.</h5>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Best coaching investment I've made. Custom diet plan actually fit my lifestyle instead of some generic
+            template."</p>
+          <h5>— Divya R.</h5>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The Nutrition Mastery ebook alone changed how I eat. Simple, practical, and actually sustainable long
+            term."</p>
+          <h5>— Priya N.</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="faq" id="faq">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow center">FAQ</p>
+      <h2 class="section-title center">GOT <span class="accent">QUESTIONS?</span></h2>
+    </div>
+
+    <div class="faq-list" data-reveal>
+      <div class="faq-item">
+        <button class="faq-question">
+          How soon will I see results?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most clients notice strength and energy improvements within 2-3 weeks, with visible physical changes
+            typically appearing around the 4-6 week mark, depending on consistency and starting point.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need a gym membership?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Not necessarily. Plans are customized around what's available to you, whether that's a fully equipped gym,
+            a home setup, or bodyweight-only training.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          What's included in the coaching plans?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Every plan includes a custom workout program, a personalized diet plan, weekly check-ins to track progress,
+            and 24/7 support for any questions along the way.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I cancel my plan anytime?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Coaching plans are billed monthly with no long-term lock-in, so you can pause or cancel whenever you
+            need to.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Are the ebooks beginner friendly?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. Each ebook is written to be understood by beginners while still offering enough depth to be
+            useful for more experienced lifters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT FORM ================= -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner" data-reveal>
+      <div class="section-head">
+        <p class="eyebrow center">Get In Touch</p>
+        <h2 class="section-title center">READY TO <span class="accent">CHANGE YOUR LIFE?</span></h2>
+        <p style="text-align:center; color:var(--grey); max-width:560px; margin:14px auto 0; font-size:15px; line-height:1.6;">
+          Have questions? Want to start your transformation journey? Drop me a message and I'll get back to you within 24 hours.
+        </p>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" name="name" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="contactSubject">Subject</label>
+          <input type="text" id="contactSubject" name="subject" required placeholder="What's this about?">
+        </div>
+        
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" required rows="6" placeholder="Tell me about your goals, questions, or anything else..."></textarea>
+        </div>
+
+        <div class="form-status" id="formStatus"></div>
+        
+        <button type="submit" class="btn btn-solid large" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-loader" style="display:none;">Sending...</span>
+          <span class="arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="#home" class="logo">Revok<span>X</span></a>
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#ebooks">Ebooks</a>
+        <a href="#coaching">Coaching</a>
+        <a href="tools.html">Tools</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+        <a href="#" aria-label="Youtube"><i class="icon-youtube"></i></a>
+        <a href="#" aria-label="Email"><i class="icon-mail"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 RevokX. All Rights Reserved.</div>
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+  </footer>
+
+  <!-- Video modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-inner">
+      <button class="video-modal-close" id="videoModalClose" aria-label="Close video">✕</button>
+      <div class="video-player-wrap">
+        <video id="demoVideo" class="demo-video" controls preload="metadata" playsinline autoplay>
+          <source src="images/lv_0_20260830183008.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
